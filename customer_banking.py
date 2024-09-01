@@ -1,7 +1,7 @@
 # Import the create_cd_account and create_savings_account functions
 # ADD YOUR CODE HERE
-from Account import cd_account
-from Account import savings_account
+from cd_account import create_cd_account
+from savings_account import create_savings_account
 
 # Define the main function
 def main():
@@ -16,7 +16,7 @@ def main():
     savings_months = int(input("Enter the number of months for the savings account: "))
 
     # Call the create_savings_account function and pass the variables from the user.
-    updated_savings_balance, interest_earned = savings_account(savings_balance, savings_interest, savings_maturity)
+    updated_savings_balance, interest_earned = create_savings_account(savings_balance, savings_interest_rate, savings_months)
 
     # Print out the interest earned and updated savings account balance with interest earned for the given months.
     # ADD YOUR CODE HERE
@@ -29,11 +29,10 @@ def main():
     cd_interest_rate = float(input("Enter the CD account interest rate: "))
     cd_months = int(input("Enter the number of months for the CD account: "))
     cd_maturity = cd_months
-    cd_interest = cd_interest_rate / 12
-    cd_maturity = cd_months
+    cd_interest = cd_interest_rate
 
     # Call the create_cd_account function and pass the variables from the user.
-    updated_cd_balance, interest_earned = cd_account(cd_balance, cd_interest, cd_maturity)
+    updated_cd_balance, interest_earned = create_cd_account(cd_balance, cd_interest, cd_maturity)
 
     # Print out the interest earned and updated CD account balance with interest earned for the given months.
     # ADD YOUR CODE HERE
